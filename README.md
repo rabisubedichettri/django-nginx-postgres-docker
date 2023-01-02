@@ -29,7 +29,9 @@ Uses gunicorn + nginx.
 docker-compose -f docker-compose.prod.yml up -d --build 
 ```
 Test it out at [http://127.0.0.1:80](http://127.0.0.1:80). 
-3. No mounted folders. To apply changes, the image must be re-built.
+
+### 1.3 No auto update
+No mounted folders. To apply changes, the image must be re-built.
 
 ### 2.3 Important commands
 #### 2.3.1 Migrations
