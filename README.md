@@ -18,7 +18,7 @@ It builds and runs in dettached mode and check our webserver(django) at     [htt
 ### 2. Production
 
 Uses gunicorn + nginx.
-### 1.1 Configuration
+### 2.1 Configuration
 1. Rename *.env_prod_django-sample* to *.env_prod_db* and *.env_prod_db-sample* to *.env_prod_db*. Update the environment variables.
 
 
@@ -31,12 +31,14 @@ docker-compose -f docker-compose.prod.yml up -d --build
 Test it out at [http://127.0.0.1:80](http://127.0.0.1:80). 
 3. No mounted folders. To apply changes, the image must be re-built.
 
-### 2.4 Important commands
-#### 2.4.1 Migrations
+### 2.3 Important commands
+#### 2.3.1 Migrations
 ```sh
 docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
 ```
-### 2.4.2 Collectstatic
+### 2.3.2 Collectstatic
 ```sh
 docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic --no-input --clear
 ```
+
+References: https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/
