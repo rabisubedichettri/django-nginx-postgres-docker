@@ -15,6 +15,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -73,13 +74,12 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {'default': {
-    'ENGINE': os.environ.get('SQL_ENGINE', 'django.db.backends.sqlite3'
-                             ),
-    'NAME': os.environ.get('SQL_DATABASE', BASE_DIR / 'db.sqlite3'),
-    'USER': os.environ.get('SQL_USER', 'user'),
-    'PASSWORD': os.environ.get('SQL_PASSWORD', 'password'),
-    'HOST': os.environ.get('SQL_HOST', 'localhost'),
-    'PORT': os.environ.get('SQL_PORT', '5432'),
+    'ENGINE': os.environ.get('DB_ENGINE'),
+    'NAME': os.environ.get('DB_DATABASE'),
+    'USER': os.environ.get('DB_USER'),
+    'PASSWORD': os.environ.get('DB_PASSWORD'),
+    'HOST': os.environ.get('DB_HOST'),
+    'PORT': os.environ.get('DB_PORT'),
     }}
 
 # Password validation

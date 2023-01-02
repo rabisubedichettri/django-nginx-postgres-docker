@@ -18,11 +18,12 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from upload.views import image_upload
+from upload.views import image_upload,index
 
 urlpatterns = [
-    path("", image_upload, name="upload"),
+    path("upload/", image_upload, name="upload"),
     path("admin/", admin.site.urls),
+    path("",index,name="index"),
 ]
 
 if bool(settings.DEBUG):

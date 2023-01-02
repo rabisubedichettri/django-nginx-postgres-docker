@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# envs's samples and needs keep secrete 
+# .env_dev_db
+# .env_dev_django
+# .env_prod_db
+# .env_prod_django
