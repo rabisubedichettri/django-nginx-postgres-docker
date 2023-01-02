@@ -24,21 +24,21 @@ Uses gunicorn + nginx.
 
 
 2. Check once, Database should have the same user,password and database's name in both .env_prod_django and .env_prod_db 
-### 1.2 Build and Run the containers
+### 2.2 Build and Run the containers
 ``` sh
 docker-compose -f docker-compose.prod.yml up -d --build 
 ```
 Test it out at [http://127.0.0.1:80](http://127.0.0.1:80). 
 
-### 1.3 No auto update
+### 2.3 No auto update
 No mounted folders. To apply changes, the image must be re-built.
 
-### 2.3 Important commands
-#### 2.3.1 Migrations
+### 2.4 Important commands
+#### 2.4.1 Migrations
 ```sh
 docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
 ```
-### 2.3.2 Collectstatic
+### 2.4.2 Collectstatic
 ```sh
 docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic --no-input --clear
 ```
