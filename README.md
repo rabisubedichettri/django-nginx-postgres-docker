@@ -36,11 +36,11 @@ No mounted folders. To apply changes, the image must be re-built.
 ### 2.4 Important commands
 #### 2.4.1 Migrations
 ```sh
-docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
+docker-compose -f docker-compose.prod.yml exec backend python manage.py migrate --noinput
 ```
 ### 2.4.2 Collectstatic
 ```sh
-docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic --no-input --clear
+docker-compose -f docker-compose.prod.yml exec backend python manage.py collectstatic --no-input --clear
 ```
 
 References: https://testdriven.io/blog/dockerizing-django-with-postgres-gunicorn-and-nginx/
